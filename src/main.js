@@ -7,7 +7,7 @@ const loader = new GLTFLoader();
 
 const hdrLoader = new RGBELoader();
 
-hdrLoader.load("/hdr/hdr.hdr", (texture) => {
+hdrLoader.load(import.meta.env.BASE_URL + "/hdr/hdr.hdr", (texture) => {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.environment = texture;
 });
@@ -15,7 +15,7 @@ hdrLoader.load("/hdr/hdr.hdr", (texture) => {
 let model;
 let model2;
 
-loader.load("/models/model.glb", (gltf) => {
+loader.load(import.meta.env.BASE_URL + "/models/model.glb", (gltf) => {
     model = gltf.scene;
     model.scale.set(0.01, 0.01, 0.01);
     model.position.set(0, 0, -0.5);
@@ -24,7 +24,7 @@ loader.load("/models/model.glb", (gltf) => {
     scene.add(model);
 });
 
-loader.load("/models/model2.glb", (gltf) => {
+loader.load(import.meta.env.BASE_URL + "/models/model2.glb", (gltf) => {
     model2 = gltf.scene;
     model2.scale.set(0.1, 0.1, 0.1);
     model2.visible = false;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebAR</title>
+    <script type="module" src="/src/main.js"></script>
+    <style>
+        #ui {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        #ui button {
+            position: absolute;
+            pointer-events: auto;
+        }
+
+        .btn{
+            border: none;
+            font-size: 16px;
+            color: rgba(64, 64, 64, 0.5);
+            background-color: rgba(252, 252, 252, 0.5);
+            border-radius: 10%;
+            border: 1px solid rgba(64, 64, 64, 0.5);
+        }
+
+        #modelButton {
+            right: 20px;
+            bottom: 50px;
+        }
+
+        #colorButton {
+            right: 20px;
+            bottom: 100px;
+        }
+
+        #rotateButton {
+            right: 20px;
+            bottom: 150px;
+        }
+        #ui[hidden] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="startButton" class="btn">Начать AR</button>
+    <div id="ui">
+        <button id="rotateButton" class="btn">Вращение</button>
+        <button id="colorButton" class="btn">Цвет</button>
+        <button id="modelButton" class="btn">Модель</button>
+    </div>
+    <div id="status"></div>
+
+</body>
+
+</html>
